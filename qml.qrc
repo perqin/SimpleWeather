@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>main.js</file>
+        <file>SettingsPage.qml</file>
+        <file>StackPage.qml</file>
+        <file>MainPage.qml</file>
+        <file>placeIcon.png</file>
+        <file>quitIcon.png</file>
+        <file>SignalCenter.qml</file>
+        <file>Settings.qml</file>
+    </qresource>
+</RCC>
