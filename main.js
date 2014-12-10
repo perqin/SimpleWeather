@@ -1,6 +1,8 @@
 .pragma library
 
-var _signalCenter, _settings;
+//Qt.include("cities.js");
+
+var _signalCenter, _settings, provinces = new Array, citys = new Array(50);
 
 function initialize(sc, s) {
     _signalCenter = sc;
@@ -49,34 +51,30 @@ function showError(error) {
 
 function getCityid(cityname) {
     var url = "http://apistore.baidu.com/microservice/cityinfo?cityname=" + cityname;
-    //
-    console.log(url);
-    //
+    //console.log(url);
     sendHttpRequest("GET", url, "", getCityidFromJSON, showError);
 }
 
 function getCityidFromJSON(json) {
-    //
+    console.log("Cityid>>>");
     console.log(json);
-    //
     var obj = JSON.parse(json);
     if (obj.errNum == 0) {
         _settings.cityid = obj.retData.cityCode;
+    } else {
+        _signalCenter.occurError(obj.errMsg);
     }
 }
 
 function getWeather(cityid) {
     var url = "http://apistore.baidu.com/microservice/weather?cityid=" + cityid;
-    //
-    console.log(url);
-    //
+    //console.log(url);
     sendHttpRequest("GET", url, "", getWeatherFromJSON, showError);
 }
 
 function getWeatherFromJSON(json) {
-    //
+    console.log("Weather>>>");
     console.log(json);
-    //
     var obj = JSON.parse(json);
     if (obj.errNum == 0) {
         _settings.date = obj.retData.date;
@@ -88,5 +86,35 @@ function getWeatherFromJSON(json) {
         _settings.windDirection = obj.retData.WD;
         _settings.windLevel = obj.retData.WS;
         _signalCenter.weatherChanged();
+    } else {
+        _signalCenter.occurError(obj.errMsg);
     }
+}
+
+function getWeatherIcon(weather) {
+    if (weather == "多云转小雨")
+        //return "wind_to_s_rain.png";
+        return "rainy.png";
+    else if (weather == "阴")
+        return "overcast.png";
+    else if (weather == "多云")
+        return "cloudy.png";
+    else if (weather == "阴转小雨")
+        return "rainy.png";
+    else if (weather == "晴")
+        return "sunny.png";
+    else if (weather == "小雪转多云")
+        return "cloudy.png";
+    else if (weather == "小雪")
+        return "snowy.png";
+    else if (weather == "大雪")
+        return "snowy.png";
+    else if (weather == "多云转晴")
+        return "sunny.png";
+    else if (weather == "小雨转阴")
+        return "overcast.png";
+    else if (weather == "")
+        return ".png";
+    else
+        return "weather.png";
 }

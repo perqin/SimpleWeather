@@ -9,6 +9,10 @@ QtObject {
     property int cityid: 0;
     onCityidChanged: signalCenter.cityidChanged(cityid);
 
+    property string provincename;
+    property int provinceid;
+    onProvinceidChanged: signalCenter.provinceChanged(provinceid);
+
     property string date;
     property string time;
     property string weather;

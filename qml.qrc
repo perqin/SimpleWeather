@@ -2,12 +2,24 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>main.js</file>
-        <file>SettingsPage.qml</file>
+        <file>Background.qml</file>
         <file>StackPage.qml</file>
         <file>MainPage.qml</file>
         <file>placeIcon.png</file>
         <file>quitIcon.png</file>
         <file>SignalCenter.qml</file>
         <file>Settings.qml</file>
+        <file>PlaceSelectPage.qml</file>
+        <file>cities.js</file>
+        <file>backIcon.png</file>
+        <file>okIcon.png</file>
+        <file>tempIcon.png</file>
+        <file>windIcon.png</file>
+        <file>cloudy.png</file>
+        <file>overcast.png</file>
+        <file>rainy.png</file>
+        <file>snowy.png</file>
+        <file>sunny.png</file>
+        <file>weather.png</file>
     </qresource>
 </RCC>
