@@ -95,7 +95,7 @@ Item {
                 width: 540; height: 400;
                 Image {
                     id: weatherImage;
-                    source: "quitIcon.png";
+                    source: "weather.png";
                     anchors.horizontalCenter: parent.horizontalCenter; anchors.top: parent.top;
                 }
                 Text {

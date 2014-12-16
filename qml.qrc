@@ -3,7 +3,6 @@
         <file>main.qml</file>
         <file>main.js</file>
         <file>Background.qml</file>
-        <file>StackPage.qml</file>
         <file>MainPage.qml</file>
         <file>placeIcon.png</file>
         <file>quitIcon.png</file>
@@ -21,5 +20,7 @@
         <file>snowy.png</file>
         <file>sunny.png</file>
         <file>weather.png</file>
+        <file>simpleweather_zh_CN.qm</file>
+        <file>splash.jpg</file>
     </qresource>
 </RCC>
